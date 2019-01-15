@@ -12,8 +12,8 @@ pipeline {
         checkout([
         $class: 'GitSCM',
         branches: 'master',
-        userRemoteConfigs: [[url: 'https://github.com/hahsnejeb/maven-project.git']]
-
+        userRemoteConfigs: [url: 'https://github.com/hahsnejeb/maven-project.git']
+        ])
       }
     }
     stage('test') {
