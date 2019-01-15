@@ -15,16 +15,5 @@ pipeline {
         userRemoteConfigs: [url: 'https://github.com/hahsnejeb/maven-project.git']
         ])
       }
-    }
-    stage('test') {
-      steps {
-        echo 'testing...'
-      }
-    }
-    stage('deploy-stage') {
-      steps {
-        echo 'deploying to stage...'
-      }
-    }
-  }
+}
 }
