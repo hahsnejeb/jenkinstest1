@@ -15,7 +15,8 @@ pipeline {
     stage('build') {
       steps {
         echo 'Building...'
-        sh 'cp Jenkinsfile Jenkinsfile.orig'
+        withMaven(
+
       }
     }
   }
