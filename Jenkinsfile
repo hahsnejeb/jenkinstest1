@@ -7,7 +7,7 @@ pipeline {
       steps {
         checkout([
         $class: 'GitSCM',
-        userRemoteConfigs: [[url: 'git@bitbucket.org:hahsnejeb/jenkinstest1.git']]
+        userRemoteConfigs: [[url: 'git@github.com:hahsnejeb/jenkinstest1.git']]
         ])
         echo env.GIT_BRANCH
       }
