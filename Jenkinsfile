@@ -3,10 +3,15 @@ pipeline {
   agent any
 
   stages {
-    stage('package') {
+    stage('checkout git') {
       steps {
-        echo 'packaging...'
+        checkout([
+        $class: 'GitSCM',
+        userRemoteConfigs: [[url: 'git@bitbucket.org:hahsnejeb/jenkinstest1.git']]
+        ])
+        echo env.GIT_BRANCH
       }
     }
+
   }
 }
