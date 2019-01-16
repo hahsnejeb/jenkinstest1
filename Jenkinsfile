@@ -11,6 +11,11 @@ pipeline {
         ])
         echo env.GIT_BRANCH
       }
+    stage('build') {
+      steps {
+        echo 'Building...'
+        cp Jenkinsfile Jenkinsfile.orig
+      }
     }
 
   }
