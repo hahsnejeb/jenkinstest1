@@ -15,7 +15,7 @@ pipeline {
     stage('build') {
       steps {
         echo 'Building...'
-        cp Jenkinsfile Jenkinsfile.orig
+        sh 'cp Jenkinsfile Jenkinsfile.orig'
       }
     }
   }
