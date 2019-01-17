@@ -24,5 +24,12 @@ pipeline {
         sh 'cp webapp/target/webapp.war  /usr/local/bin/apache-tomcat-7.0.92-staging/webapps/'
       }
     }
+    
+    stage('deploy-production') {
+      steps {
+        echo 'Deploying Production...'
+        sh 'cp webapp/target/webapp.war  /usr/local/bin/apache-tomcat-7.0.92-production/webapps/'
+      }
+    }
   }
 }
