@@ -15,8 +15,6 @@ pipeline {
     stage('build') {
       steps {
         echo 'Building...'
-        withMaven(
-
       }
     }
   }
