@@ -21,7 +21,7 @@ pipeline {
     stage('deploy-staging') {
       steps {
         echo 'Deploying Staging...'
-        sh 'cp **/*.war /usr/local/bin/apache-tomcat-7.0.92-staging/webapps/'
+        sh 'cp webapp/target/webapp.war  /usr/local/bin/apache-tomcat-7.0.92-staging/webapps/'
       }
     }
   }
