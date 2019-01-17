@@ -15,7 +15,7 @@ pipeline {
     stage('build') {
       steps {
         echo 'Building...'
-        sh 'mvn clean package'
+        sh '/usr/local/bin/apache-maven-3.6.0/bin/mvn clean package'
       }
     }
   }
