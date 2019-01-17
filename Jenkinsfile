@@ -18,17 +18,21 @@ pipeline {
         sh '/usr/local/bin/apache-maven-3.6.0/bin/mvn clean package'
       }
     }
-    stage('deploy-staging') {
-      steps {
-        echo 'Deploying Staging...'
-        sh 'cp webapp/target/webapp.war  /usr/local/bin/apache-tomcat-7.0.92-staging/webapps/'
-      }
-    }
+    stage('deployments') {
+      parallel {
+        stage('deploy-staging') {
+          steps {
+            echo 'Deploying Staging...'
+            sh 'cp webapp/target/webapp.war  /usr/local/bin/apache-tomcat-7.0.92-staging/webapps/'
+          }
+        }
     
-    stage('deploy-production') {
-      steps {
-        echo 'Deploying Production...'
-        sh 'cp webapp/target/webapp.war  /usr/local/bin/apache-tomcat-7.0.92-production/webapps/'
+        stage('deploy-production') {
+          steps {
+            echo 'Deploying Production...'
+            sh 'cp webapp/target/webapp.war  /usr/local/bin/apache-tomcat-7.0.92-production/webapps/'
+          }
+        }
       }
     }
   }
